@@ -10,7 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bhambri94/marcus/credentials"
 	config "github.com/bhambri94/marcus/marcusConfig"
 )
 
@@ -46,8 +45,8 @@ func getAccessToken() string {
 	}
 
 	authApiRequest := AuthApiRequest{
-		AccessID:  credentials.VoluumAccessId,
-		AccessKey: credentials.VoluumAccessKey,
+		AccessID:  config.VoluumAccessId,
+		AccessKey: config.VoluumAccessKey,
 	}
 
 	byteArray, err := json.Marshal(authApiRequest)
@@ -61,8 +60,8 @@ func getAccessToken() string {
 		// handle err
 	}
 	req.Header.Set("Accept", "application/json; charset=utf-8")
-	req.Header.Set("Accessid", credentials.VoluumAccessId)
-	req.Header.Set("Accesskey", credentials.VoluumAccessKey)
+	req.Header.Set("Accessid", config.VoluumAccessId)
+	req.Header.Set("Accesskey", config.VoluumAccessKey)
 	req.Header.Set("Authorization", "Basic dm9sdXVtZGVtb0B2b2x1dW0uY29tOjFxYXohUUFaIn0=")
 	req.Header.Set("Content-Type", "application/json")
 
