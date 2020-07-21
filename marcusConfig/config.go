@@ -1,21 +1,30 @@
 package marcusConfig
 
-type struct Configs {
-	SpreadsheetId string
-	TrafficSourcesShortlisted []string
+import (
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"log"
+)
+
+type Configs struct {
+	SpreadsheetId                 string
+	TrafficSourcesShortlisted     []string
 	TrafficSourceFilteringEnabled bool
-	IncludeTrafficSources string
-	VoluumAccessId string
-	VoluumAccessKey string
+	IncludeTrafficSources         string
+	VoluumAccessId                string
+	VoluumAccessKey               string
 }
 
-var Configurations Configs
+var (
+	Configurations = Configs{}
+)
 
-func SetConfig(){
+func SetConfig() {
 	input, err := ioutil.ReadFile("config.json")
 	if err != nil {
 		log.Fatalf("Unable to read client secret file: %v", err)
 	}
-	Configurations = json.Unmarshal(input, &Configurations)
+	json.Unmarshal(input, &Configurations)
 	fmt.Println(Configurations)
 }
