@@ -5,12 +5,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"github.com/bhambri94/marcus/config"
-	"github.com/bhambri94/marcus/credentials"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/bhambri94/marcus/config"
+	"github.com/bhambri94/marcus/credentials"
 )
 
 type AuthApiResponse struct {
@@ -137,7 +138,7 @@ func finalSheet(dailyReport DailyReport, FinalRowsCount int, Day int) ([][]inter
 	values = append(values, firstRowOfSheetLabels)
 
 	ShortlistedTrafficSources := make(map[string]bool)
-	configTrafficSources := config.GetTrafficSourcesShortlisted()
+	configTrafficSources := config.Configurations.TrafficSourcesShortlisted
 	for _, source := range configTrafficSources {
 		ShortlistedTrafficSources[strings.ToLower(source)] = true
 	}

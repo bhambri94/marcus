@@ -8,16 +8,15 @@ import (
 	"log"
 	"os"
 
-	"github.com/bhambri94/marcus/config"
-
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/sheets/v4"
+	"github.com/bhambri94/marcus/config"
 )
 
 var srv *sheets.Service
 var (
-	spreadsheetId = config.SpreadsheetId
+	spreadsheetId = config.Configurations.SpreadsheetId
 )
 
 // Retrieve a token, saves the token, then returns the generated client.
