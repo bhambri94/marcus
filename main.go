@@ -1,7 +1,9 @@
 package main
 
 import (
-	"marcus/marcusConfig"
+	"fmt"
+
+	"github.com/bhambri94/marcus/marcusConfig"
 
 	"github.com/bhambri94/marcus/sheets"
 	"github.com/bhambri94/marcus/voluum"
@@ -9,6 +11,8 @@ import (
 
 func main() {
 	marcusConfig.SetConfig()
+	fmt.Println(marcusConfig.Configurations.SpreadsheetId)
+
 	values, _, SheetName := voluum.GetDailyVoluumReport()
 	sheets.ClearSheet(SheetName)
 	writeRange := SheetName + "!A1"
