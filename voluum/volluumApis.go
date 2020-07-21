@@ -168,7 +168,7 @@ var (
 
 func addCostAndRevenueDayWise(dailyReport DailyReport, Day string) {
 	ShortlistedTrafficSources := make(map[string]bool)
-	configTrafficSources := config.GetTrafficSourcesShortlisted()
+	configTrafficSources := config.Configurations.TrafficSourcesShortlisted
 	for _, source := range configTrafficSources {
 		ShortlistedTrafficSources[strings.ToLower(source)] = true
 	}
