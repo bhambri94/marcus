@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/bhambri94/marcus/config"
 	"github.com/bhambri94/marcus/credentials"
+	config "github.com/bhambri94/marcus/marcusConfig"
 )
 
 type AuthApiResponse struct {
@@ -146,7 +146,7 @@ func finalSheet(dailyReport DailyReport, FinalRowsCount int, Day int) ([][]inter
 	rowID := 0
 	for rowID < FinalRowsCount {
 		LocalDay = Day
-		if ShortlistedTrafficSources[strings.ToLower(dailyReport.Rows[rowID].TrafficSourceName)] || !config.TrafficSourceFilteringEnabled {
+		if ShortlistedTrafficSources[strings.ToLower(dailyReport.Rows[rowID].TrafficSourceName)] || !config.Configurations.TrafficSourceFilteringEnabled {
 			var row []interface{}
 			row = append(row, dailyReport.Rows[rowID].TrafficSourceName, dailyReport.Rows[rowID].TrafficSourceID, dailyReport.Rows[rowID].CampaignName, dailyReport.Rows[rowID].CampaignID)
 			for LocalDay > 1 {
@@ -176,7 +176,7 @@ func addCostAndRevenueDayWise(dailyReport DailyReport, Day string) {
 
 	rowID := 0
 	for rowID < len(dailyReport.Rows) {
-		if ShortlistedTrafficSources[strings.ToLower(dailyReport.Rows[rowID].TrafficSourceName)] || !config.TrafficSourceFilteringEnabled {
+		if ShortlistedTrafficSources[strings.ToLower(dailyReport.Rows[rowID].TrafficSourceName)] || !config.Configurations.TrafficSourceFilteringEnabled {
 			finalMapCost[dailyReport.Rows[rowID].CampaignID+Day] = floatToString(dailyReport.Rows[rowID].Cost)
 			finalMapRevenue[dailyReport.Rows[rowID].CampaignID+Day] = floatToString(dailyReport.Rows[rowID].Revenue)
 		}

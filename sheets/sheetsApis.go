@@ -8,10 +8,10 @@ import (
 	"log"
 	"os"
 
+	config "github.com/bhambri94/marcus/marcusConfig"
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"
 	"google.golang.org/api/sheets/v4"
-	"github.com/bhambri94/marcus/config"
 )
 
 var srv *sheets.Service

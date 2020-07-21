@@ -1,4 +1,4 @@
-package config
+package marcusConfig
 
 type struct Configs {
 	SpreadsheetId string
