@@ -6,8 +6,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"log"
-	"marcus/config"
 	"os"
+
+	"github.com/bhambri94/marcus/config"
 
 	"golang.org/x/oauth2"
 	"golang.org/x/oauth2/google"

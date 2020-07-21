@@ -5,13 +5,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
-	"marcus/config"
+	"github.com/bhambri94/marcus/config"
+	"github.com/bhambri94/marcus/credentials"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/bhambri94/marcus/credentials"
 )
 
 type AuthApiResponse struct {
