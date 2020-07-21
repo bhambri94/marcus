@@ -11,6 +11,18 @@
 
 [[projects]]
   branch = "master"
+  digest = "1:db8bd6fea281e8c86630c10f9099a440a02d9d2ad853b87497a10da2b466904f"
+  name = "github.com/bhambri94/marcus"
+  packages = [
+    "marcusConfig",
+    "sheets",
+    "voluum",
+  ]
+  pruneopts = "UT"
+  revision = "7d4343eb79ee637b1b89b1c00b31e75c84a2e0ef"
+
+[[projects]]
+  branch = "master"
   digest = "1:b7cb6054d3dff43b38ad2e92492f220f57ae6087ee797dca298139776749ace8"
   name = "github.com/golang/groupcache"
   packages = ["lru"]
@@ -269,6 +281,9 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/bhambri94/marcus/marcusConfig",
+    "github.com/bhambri94/marcus/sheets",
+    "github.com/bhambri94/marcus/voluum",
     "golang.org/x/oauth2",
     "golang.org/x/oauth2/google",
     "google.golang.org/api/sheets/v4",

@@ -45,8 +45,8 @@ func getAccessToken() string {
 	}
 
 	authApiRequest := AuthApiRequest{
-		AccessID:  config.VoluumAccessId,
-		AccessKey: config.VoluumAccessKey,
+		AccessID:  config.Configurations.VoluumAccessId,
+		AccessKey: config.Configurations.VoluumAccessKey,
 	}
 
 	byteArray, err := json.Marshal(authApiRequest)
@@ -60,8 +60,8 @@ func getAccessToken() string {
 		// handle err
 	}
 	req.Header.Set("Accept", "application/json; charset=utf-8")
-	req.Header.Set("Accessid", config.VoluumAccessId)
-	req.Header.Set("Accesskey", config.VoluumAccessKey)
+	req.Header.Set("Accessid", config.Configurations.VoluumAccessId)
+	req.Header.Set("Accesskey", config.Configurations.VoluumAccessKey)
 	req.Header.Set("Authorization", "Basic dm9sdXVtZGVtb0B2b2x1dW0uY29tOjFxYXohUUFaIn0=")
 	req.Header.Set("Content-Type", "application/json")
 
