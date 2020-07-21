@@ -6,11 +6,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"marcus/config"
-	"marcus/credentials"
 	"net/http"
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/bhambri94/marcus/credentials"
 )
 
 type AuthApiResponse struct {
