@@ -21,7 +21,7 @@ var (
 
 // Retrieve a token, saves the token, then returns the generated client.
 func getClient() *sheets.Service {
-	b, err := ioutil.ReadFile("credentials/secret.json")
+	b, err := ioutil.ReadFile("sheets/secret.json")
 	if err != nil {
 		log.Fatalf("Unable to read client secret file: %v", err)
 	}
